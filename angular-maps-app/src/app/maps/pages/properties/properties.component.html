@@ -1,0 +1,32 @@
+<div class="row mt-3">
+  <div class="col-2"></div>
+  <div class="col">
+    <h2>Listado de Intersecciones</h2>
+    <hr />
+  </div>
+</div>
+
+<div class="row container">
+  <div class="col-2"></div>
+  <div class="col">
+    <div class="row">
+      <div class="col-4 mb-2" *ngFor="let propiedad of propiedades">
+        <div class="card">
+          <app-min-map
+            class="card-img-top"
+            [center]="propiedad.lngLat"
+          ></app-min-map>
+          <div class="card-body">
+            <h5 class="card-title">{{ propiedad.titulo }}</h5>
+            <p class="card-text">{{ propiedad.descripcion }}</p>
+            <hr>
+            <p class="card-text">Semaforos Vehiculares: {{ propiedad.semaphoreVehicle}}</p>
+            <p class="card-text">Semaforos Peatonales: {{ propiedad.semaphorePeat}}</p>
+            <p class="card-text">Estado: <strong style="color:green">{{ propiedad.status}}</strong></p>
+            <a class="btn btn-success" href="{{ propiedad.url }}" >{{ propiedad.btn }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
